@@ -99,6 +99,49 @@ setInterval(() => {
 }, 5000);
 
 
+document.addEventListener('keydown',(e)=>{
+    if(e.key === "ArrowLeft"){
+        let changebleAtr;
+
+    let showSlider = document.querySelector('.showSlider')
+
+    if(showSlider.previousElementSibling){
+        showSlider.previousElementSibling.classList.add('showSlider')
+        changebleAtr = showSlider.previousElementSibling.getAttribute('href');
+    }
+    else{   
+        showSlider.parentElement.children[4].classList.add('showSlider') 
+        changebleAtr = showSlider.parentElement.children[4].getAttribute('href');
+    }
+
+    showSlider.classList.remove("showSlider");
+    sliderImg.setAttribute('src',changebleAtr);
+
+    }})
+
+    document.addEventListener("keydown",function(e){
+        if(e.key === "ArrowRight"){
+            if(popup.style.display == 'block'){
+                let changebleAtr;
+        
+            let showSlider = document.querySelector('.showSlider')
+        
+            if(showSlider.nextElementSibling){
+                showSlider.nextElementSibling.classList.add('showSlider')
+                changebleAtr = showSlider.nextElementSibling.getAttribute('href');
+            }
+            else{   
+                showSlider.parentElement.children[0].classList.add('showSlider') 
+                changebleAtr = showSlider.parentElement.children[0].getAttribute('href');
+            }
+        
+            showSlider.classList.remove("showSlider");
+            sliderImg.setAttribute('src',changebleAtr);
+        
+            }
+        }
+    })
+
 
 
 
